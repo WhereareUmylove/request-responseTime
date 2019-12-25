@@ -2,10 +2,9 @@ var fs = require('fs-extra')
 
 var list = {}
 exports.addList =(req,res)=>{
-    if(req.body.uid){
-        let name = req.body.uid+''
+    if(req.body.name){
+        let name = req.body.name+''
         list[name] = req.body
-        let time = new Date().toLocaleString()
         let str = JSON.stringify(req.body)+'||'
         let path = "./list/"+name+".txt"
         try{
@@ -36,8 +35,8 @@ exports.getList = (req,res)=>{
 }
 
 exports.detail = (req, res) => {
-    let uid = req.params.uid
-    fs.readFile("./list/"+uid+".txt","utf-8", (err, data)=>{
+    let name = req.params.name
+    fs.readFile("./list/"+name+".txt","utf-8", (err, data)=>{
         if (err) {
             console.log(err)
             res.sendStatus(404)

@@ -21,7 +21,7 @@ app.all('*',(req,res,next)=>{
 app.post("/",serve.addList)
 
 app.get('/',serve.getList)
-app.get('/detail/:uid',serve.detail)
+app.get('/detail/:name',serve.detail)
 
 app.listen(3003);
 console.log("启动3003");
