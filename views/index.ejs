@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>res-time</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        span{
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <span>名称</span>
+                <span>IP</span>
+                <span>端口号</span>
+                <span>延迟(ms)</span>
+                <span>UID</span>
+                <span>时间</span>
+                <hr>
+            </li>
+        </ul>
+        <ul>
+            <% for(var i=0;i<list.length;i++){ %>
+                <li>
+                    <span><%= list[i].name %></span>
+                    <span><%= list[i].IP %></span>
+                    <span><%= list[i].port %></span>
+                    <span><%= list[i].delay %></span>
+                    <span><%= list[i].uid %></span>
+                    <span><%= list[i].time %></span>
+                    <hr>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+<script>
+</script>
+</html>
